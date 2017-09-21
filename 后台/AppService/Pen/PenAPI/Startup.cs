@@ -9,6 +9,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using SwaggerExtension;
+using System.IO;
+
 namespace PenAPI
 {
     public class Startup
@@ -16,6 +18,7 @@ namespace PenAPI
         public Startup(IHostingEnvironment env)
         {
             var cfgBuilder = new ConfigurationBuilder();
+            cfgBuilder.SetBasePath(Directory.GetCurrentDirectory());
             cfgBuilder.AddJsonFile($"appsettings.json", true, true);
             cfgBuilder.AddJsonFile($"appsettings.{env.EnvironmentName}.json", true, true);
             Configuration = cfgBuilder.Build();
@@ -44,7 +47,7 @@ namespace PenAPI
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseStaticFiles();
             app.UseMvc();
             app.UseSwaggerDocument("v1");
         }
