@@ -1,0 +1,12 @@
+AppService:放Api服务项目
+Infrastructure：放基础类库项目
+Test：放测试项目
+
+MapPenDev.sln：总管所有的项目结构
+
+
+注意：
+	项目之间的引用请在自己项目中把需要引用的项目给添加进去，参考 AppService/Pen 中的结构
+	自己项目可对所需要的项目进行管控。
+	每个项目都需要在MapPenDev.sln 中对应添加上引用，
+	这样能方便整体调试
