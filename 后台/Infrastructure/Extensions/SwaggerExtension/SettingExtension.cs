@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.PlatformAbstractions;
+using SwaggerExtension.Filters;
 using Swashbuckle.AspNetCore.Swagger;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Swashbuckle.AspNetCore.SwaggerUI;
@@ -29,6 +30,24 @@ namespace SwaggerExtension
                 
                 if (info != null) info(settingInfo);
 
+                x.SwaggerDoc(version, settingInfo);
+                if (options != null) options(x);
+
+                x.IncludeXmlComments();
+            });
+
+            return serviceCollection;
+        }
+
+
+        public static IServiceCollection AddODataSwaggerDocument(this IServiceCollection serviceCollection, Action<Info> info = null, Action<SwaggerGenOptions> options = null)
+        {
+            serviceCollection.AddSwaggerGen(x =>
+            {
+                Info settingInfo = new Info() { Title = application.ApplicationName, Version = version, Description = application.RuntimeFramework.FullName };
+
+                if (info != null) info(settingInfo);
+                x.DocumentFilter<ODataDocumentFilter>(serviceCollection.BuildServiceProvider());
                 x.SwaggerDoc(version, settingInfo);
                 if (options != null) options(x);
 
