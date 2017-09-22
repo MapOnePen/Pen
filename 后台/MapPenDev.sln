@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.15
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{D5F97F6F-979D-4107-92C6-83FC0ACC1EFA}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PenAPI", "AppService\Pen\PenAPI\PenAPI.csproj", "{47C6ABE5-C3A7-4DD1-A609-085295653CC8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwaggerExtension", "Infrastructure\Extensions\SwaggerExtension\SwaggerExtension.csproj", "{1982D034-3814-4069-8C07-4D207459FF44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendSMS", "AppService\SendSMS\SendSMS.csproj", "{3C96BA52-E1D9-4050-9EAD-19C0FCB8C892}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{1982D034-3814-4069-8C07-4D207459FF44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1982D034-3814-4069-8C07-4D207459FF44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1982D034-3814-4069-8C07-4D207459FF44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C96BA52-E1D9-4050-9EAD-19C0FCB8C892}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C96BA52-E1D9-4050-9EAD-19C0FCB8C892}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C96BA52-E1D9-4050-9EAD-19C0FCB8C892}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C96BA52-E1D9-4050-9EAD-19C0FCB8C892}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,6 +64,7 @@ Global
 		{10E8DA95-96FC-4EAA-91CD-748494A831B4} = {11932C9B-DB79-459A-81BD-6AE9A91409DB}
 		{47C6ABE5-C3A7-4DD1-A609-085295653CC8} = {11932C9B-DB79-459A-81BD-6AE9A91409DB}
 		{1982D034-3814-4069-8C07-4D207459FF44} = {E4C09DC7-F087-41F1-8E77-9F556C61D8DF}
+		{3C96BA52-E1D9-4050-9EAD-19C0FCB8C892} = {11932C9B-DB79-459A-81BD-6AE9A91409DB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8149C2B1-3D22-4D10-962D-58221876BF43}
