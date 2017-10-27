@@ -10,6 +10,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Data\Domain\" />
+    <Folder Include="Data\Services\" />
+    <Folder Include="Data\Mapping\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
@@ -23,6 +26,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Infrastructure\Extensions\SwaggerExtension\SwaggerExtension.csproj" />
+    <ProjectReference Include="..\..\..\MapPen.Data\MapPen.Data.csproj" />
   </ItemGroup>
 
 </Project>
