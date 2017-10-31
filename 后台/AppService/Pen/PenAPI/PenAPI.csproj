@@ -10,7 +10,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Data\Domain\" />
     <Folder Include="Data\Services\" />
     <Folder Include="Data\Mapping\" />
     <Folder Include="wwwroot\" />
