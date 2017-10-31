@@ -37,14 +37,24 @@ namespace Identity.API.Test
                 });
             });
             #endregion
-            services.AddAuthorization();
-            AuthenticationBuilder builder = new AuthenticationBuilder(services);
-            builder.AddIdentityServerAuthentication(opertion => {
-                opertion.Authority = "http://139.217.11.253:8010";
-                opertion.ApiName = "api1";
-                opertion.ApiSecret = "secret";
-                opertion.RequireHttpsMetadata = false;
-            });
+
+            //ApiResource 所拥的 Scope 一定要跟 Client 有的Scope 对应上
+            services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
+                .AddIdentityServerAuthentication(option=> {
+                    //这里是在对 ApiResource 进行验证  就是在方法上加 [Authorize] 会进行这个验证
+                    option.Authority = "http://localhost:8010";
+                    option.ApiName = "ApiInfo";  //ApiResource 的Name
+                    option.ApiSecret = "passwordq123q"; //ApiResource 的 ApiSecrets
+                    option.RequireHttpsMetadata = false;
+                });
+            
+            //AuthenticationBuilder builder = new AuthenticationBuilder(services);
+            //builder.AddIdentityServerAuthentication(opertion => {
+            //    opertion.Authority = "http://139.217.11.253:8010";
+            //    opertion.ApiName = "api1";
+            //    opertion.ApiSecret = "secret";
+            //    opertion.RequireHttpsMetadata = false;
+            //});
             services.AddMvc();
         }
 
