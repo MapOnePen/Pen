@@ -11,7 +11,7 @@ using System;
 namespace Identity.API.Migrations
 {
     [DbContext(typeof(ConfigurationDbContext))]
-    [Migration("20171031072124_init")]
+    [Migration("20171031082528_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
