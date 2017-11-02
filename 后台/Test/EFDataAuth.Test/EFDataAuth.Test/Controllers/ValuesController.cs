@@ -1,7 +1,9 @@
 ﻿using EFDataAuth.Test.Domain;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace EFDataAuth.Test.Controllers
 {
@@ -18,7 +20,7 @@ namespace EFDataAuth.Test.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var result= _db.Users.ToList();
+            var result = _db.Users.Where(x => x.Name.Length > 4).FirstOrDefault(x => x.Name.Length > 5);
             return Ok(result);
         }
 

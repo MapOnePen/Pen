@@ -57,7 +57,7 @@ namespace EFDataAuth.Test
             {
                 app.UseDeveloperExceptionPage();
             }
-          var d=  myTestDbContext.Users.ToList();
+
             app.UseMvc();
         }
     }
