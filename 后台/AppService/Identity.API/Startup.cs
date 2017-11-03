@@ -101,7 +101,7 @@ namespace Identity.API
             //在进行数据迁移的时候把这句注了 用来初始化数据的
             //Add-Migration -c PersistedGrantDbContext name  这里因为有多个DbContext 需要指定对谁做迁移
             //Add-Migration -c ConfigurationDbContext
-            //update-Migration -c PersistedGrantDbContext  使用的时候跟上面一样 在多配置下需要指定使用谁的
+            //update-database -c PersistedGrantDbContext  使用的时候跟上面一样 在多配置下需要指定使用谁的
             //InitIdentityData(app.ApplicationServices);
         }
 
