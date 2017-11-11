@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace BaseData.Interface
+namespace SourcePoint.Data.BaseData.Interface
 {
     public interface IRepository<TEntity> where TEntity:IBaseEntity
     {

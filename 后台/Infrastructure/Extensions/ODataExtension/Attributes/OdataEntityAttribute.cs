@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ODataExtension.Attributes
+namespace SourcePoint.Infrastructure.Extensions.ODataExtension.Attributes
 {
     public class OdataEntityAttribute : Attribute
     {

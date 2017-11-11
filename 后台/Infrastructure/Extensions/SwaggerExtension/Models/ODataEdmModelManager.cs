@@ -2,9 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace SwaggerExtension.Models
+namespace SourcePoint.Infrastructure.Extensions.SwaggerExtension.Models
 {
     /// <summary>
     /// OData注册EdmModel管理

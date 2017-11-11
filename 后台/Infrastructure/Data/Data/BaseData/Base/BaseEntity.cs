@@ -1,7 +1,7 @@
-﻿using BaseData.Interface;
+﻿using SourcePoint.Data.BaseData.Interface;
 using System;
 
-namespace BaseData.Base
+namespace SourcePoint.Data.BaseData.Base
 {
     public partial class BaseEntity:IBaseEntity
     {

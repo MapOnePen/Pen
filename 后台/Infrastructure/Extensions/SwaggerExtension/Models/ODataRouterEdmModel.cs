@@ -1,9 +1,6 @@
 ﻿using Microsoft.OData.Edm;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace SwaggerExtension.Models
+namespace SourcePoint.Infrastructure.Extensions.SwaggerExtension.Models
 {
     public class ODataRouterEdmModel
     {

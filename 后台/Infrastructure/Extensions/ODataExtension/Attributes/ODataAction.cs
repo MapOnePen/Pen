@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 
-namespace ODataExtension.Attributes
+namespace SourcePoint.Infrastructure.Extensions.ODataExtension.Attributes
 {
     public class ODataAction : ODataRequestAttribute
     {

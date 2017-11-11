@@ -3,12 +3,12 @@ using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.OData;
 using Microsoft.AspNetCore.OData.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using ODataExtension.Attributes;
+using SourcePoint.Infrastructure.Extensions.ODataExtension.Attributes;
 using System.Linq;
 using System.Net.Http;
 using System.Reflection;
 
-namespace ODataExtension.Extensions
+namespace SourcePoint.Infrastructure.Extensions.ODataExtension.Extensions
 {
     public static class ODataModelBuilderExtension
     {

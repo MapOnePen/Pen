@@ -1,10 +1,10 @@
-﻿using BaseData.Interface;
+﻿using SourcePoint.Data.BaseData.Interface;
 using System.Collections.Generic;
 using System;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace BaseData.Base
+namespace SourcePoint.Data.BaseData.Base
 {
     public  class BaseService<TEntity> : IBaseService<TEntity> where TEntity:IBaseEntity
     {

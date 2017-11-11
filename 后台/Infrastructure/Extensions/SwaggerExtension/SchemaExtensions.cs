@@ -1,9 +1,6 @@
 ﻿using Swashbuckle.AspNetCore.Swagger;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace SwaggerExtension
+namespace SourcePoint.Infrastructure.Extensions.SwaggerExtension
 {
     public static class SchemaExtensions
     {

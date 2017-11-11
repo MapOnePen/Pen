@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.PlatformAbstractions;
 using Microsoft.OData.Edm;
-using SwaggerExtension.Models;
+using SourcePoint.Infrastructure.Extensions.SwaggerExtension.Models;
 using Swashbuckle.AspNetCore.Swagger;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
@@ -19,7 +19,7 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Xml.XPath;
 
-namespace SwaggerExtension.Filters
+namespace SourcePoint.Infrastructure.Extensions.SwaggerExtension.Filters
 {
     /// <summary>
     ///生成 OData 格式API

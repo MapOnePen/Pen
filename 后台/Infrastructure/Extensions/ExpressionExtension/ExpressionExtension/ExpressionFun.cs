@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
 
-namespace ExpressionExtension
+namespace SourcePoint.Infrastructure.Extensions.ExpressionExtension
 {
     /// <summary>
     /// 扩展 Expression
