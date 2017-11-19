@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Hosting;
-
+using Microsoft.AspNetCore;
 namespace SourcePoint.Service.Identity.API
 {
     public class Program
@@ -10,7 +10,7 @@ namespace SourcePoint.Service.Identity.API
         }
 
         public static IWebHost BuildWebHost(string[] args) =>
-                new WebHostBuilder()
+                 WebHost.CreateDefaultBuilder()
                 .UseStartup<Startup>()
                 .UseUrls("http://*:8010")
                 .Build();

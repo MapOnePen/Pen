@@ -87,7 +87,7 @@ namespace SourcePoint.Service.ApiGateway
                 Address = "localhost" //Api服务 真实地址
             };
             consul.Agent.ServiceRegister(model).GetAwaiter().GetResult();
-
+            
             // 在这里注册二个测试一下 负载的效果
 
             model.Port = 8025;
