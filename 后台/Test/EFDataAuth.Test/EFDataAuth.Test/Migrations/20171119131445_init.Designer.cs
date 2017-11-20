@@ -11,7 +11,7 @@ using System;
 namespace EFDataAuth.Test.Migrations
 {
     [DbContext(typeof(MyTestDbContext))]
-    [Migration("20171101084040_init")]
+    [Migration("20171119131445_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

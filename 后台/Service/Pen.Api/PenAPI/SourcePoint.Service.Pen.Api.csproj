@@ -33,7 +33,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Infrastructure\Extensions\SwaggerExtension\SourcePoint.Infrastructure.Extensions.SwaggerExtension.csproj" />
-    <ProjectReference Include="..\..\..\MapPen.Data\MapPen.Data.csproj" />
   </ItemGroup>
 
 </Project>

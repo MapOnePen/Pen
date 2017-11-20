@@ -4,6 +4,10 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Extensions.DependencyInjection;
+using SourcePoint.Infrastructure.Extensions.ExpressionExtension;
+using System.Linq.Expressions;
+using EFDataAuth.Test.Domain.Data;
+using System;
 
 namespace EFDataAuth.Test.Controllers
 {
@@ -20,6 +24,12 @@ namespace EFDataAuth.Test.Controllers
         [HttpGet]
         public IActionResult Get()
         {
+           // var ds = _db.Users.WhereIf(true, x => x.Name.Length > 10).ToList();
+            Expression<Func<Users, bool>> expression = query => query.Account.Length > 2;
+            var ts = _db.Users.Where(expression.WhereIf(d => d.Name.Length > 10,
+                d=>d.Phone=="123123",
+                d=>d.Name=="dddd"
+                )).ToList();
             var result = _db.Users.Where(x => x.Name.Length > 4).FirstOrDefault(x => x.Name.Length > 5);
             return Ok(result);
         }

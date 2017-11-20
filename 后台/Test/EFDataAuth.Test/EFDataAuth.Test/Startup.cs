@@ -40,14 +40,13 @@ namespace EFDataAuth.Test
                 option.ReplaceService<IProjectionExpressionVisitorFactory, RelationalProjectionExpressionVisitorFactoryEx>();
                 option.ReplaceService<ISelectExpressionFactory, SelectExpressionFactoryEx>();
             });
-            services.AddScoped<MyTestDbContext>();
+           // services.AddScoped<MyTestDbContext>();
             services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app
             , IHostingEnvironment env
-            , MyTestDbContext myTestDbContext
             , ILoggerFactory loggerFactory)
         {
             app.UseStaticFiles();

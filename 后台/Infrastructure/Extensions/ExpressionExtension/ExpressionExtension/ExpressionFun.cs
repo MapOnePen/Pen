@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Linq.Expressions;
 
 namespace SourcePoint.Infrastructure.Extensions.ExpressionExtension
@@ -33,6 +34,52 @@ namespace SourcePoint.Infrastructure.Extensions.ExpressionExtension
             var invokedExpr = Expression.Invoke(expr2, expr1.Parameters);
 
             return Expression.Lambda<Func<T, bool>>(Expression.OrElse(expr1.Body, invokedExpr), expr1.Parameters);
+        }
+
+        /// <summary>
+        /// 扩展 If-Else 操作
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="expression"></param>
+        /// <param name="isTrue">条件</param>
+        /// <param name="trueExpression">true 逻辑</param>
+        /// <param name="falseExpression">false 逻辑</param>
+        /// <returns></returns>
+        public static Expression<Func<T,bool>> WhereIf<T>(this Expression<Func<T,bool>> expression, Expression<Func<T, bool>> isTrue, Expression<Func<T,bool>> trueExpression,Expression<Func<T,bool>> falseExpression)
+        {
+            var parms = expression.Parameters.ToArray();
+
+            var condition = BoolExpression(isTrue, parms);
+            var trueResult = BoolExpression(trueExpression, parms);
+            var falseResult = BoolExpression(falseExpression, parms);
+            
+            var result = Expression.Lambda<Func<T,bool>>(Expression.Condition(
+                condition,
+                trueResult,
+                falseResult
+                ),parms);
+
+            return result;
+        }
+        
+
+        public static InvocationExpression BoolExpression<T>(Expression<Func<T,bool>> expression,params Expression[] value)
+        {
+            return Expression.Invoke(expression, value);
+        }
+
+        /// <summary>
+        /// 扩展 If-Else 操作
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="expression"></param>
+        /// <param name="isTrue">条件</param>
+        /// <param name="trueExpression">true 逻辑</param>
+        /// <param name="falseExpression">false 逻辑</param>
+        /// <returns></returns>
+        public static IQueryable<T> WhereIf<T>(this IQueryable<T> expression,bool condition,Expression<Func<T,bool>> trueExpression)
+        {
+            return condition ? expression.Where(trueExpression) : expression;
         }
     }
 }

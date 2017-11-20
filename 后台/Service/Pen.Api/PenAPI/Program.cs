@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Hosting;
 
 namespace PenAPI
 {
@@ -10,7 +11,7 @@ namespace PenAPI
         }
 
         public static IWebHost BuildWebHost(string[] args) =>
-                new WebHostBuilder()
+               WebHost.CreateDefaultBuilder()
                 .UseStartup<Startup>()
                 .Build();
     }
